@@ -1,75 +1,70 @@
-# Welcome to your project
+# Page Replacement Simulator (Operating Systems)
 
-## Project info
+Interactive web app to visualize page replacement algorithms used in operating systems. Simulate and compare FIFO, LRU, Optimal, and Clock algorithms with step-by-step animations, statistics, and charts.
 
+## Features
 
+- Interactive simulation with play, pause, next, previous, and reset controls
+- Supports algorithms: FIFO, LRU, Optimal, Clock
+- Configurable memory frame count and reference string input
+- Live visualization of memory frames and (for Clock) the pointer bit
+- Step-by-step descriptions for each reference
+- Statistics: total references, page faults, hits, hit ratio, fault ratio
+- Comparison chart to evaluate algorithms on the same input
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use**
-
-Simply start prompting.
-
-Changes made will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
+## Tech Stack
 
 - Vite
-- TypeScript
-- HTML
-- React
-- shadcn-ui
-- Tailwind CSS
-- Canvas
+- React + TypeScript
+- Tailwind CSS + shadcn/ui
+- Chart components and Canvas-based visualizations
 
-## How can I deploy this project?
+## Getting Started
 
-Simply click on Share -> Publish.
+Prerequisites: Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-## Can I connect a custom domain to my project?
+```sh
+# Clone the repository
+git clone <YOUR_GIT_URL>
+cd <YOUR_PROJECT_NAME>
 
-Yes, you can!
+# Install dependencies
+npm install
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# Start the dev server
+npm run dev
 
-Read more here: Setting up a custom domain.
+# Build for production
+npm run build
+
+# Preview the production build
+npm run preview
+```
+
+## How to Use
+
+1. Choose an algorithm (FIFO, LRU, Optimal, Clock).
+2. Enter a reference string (comma-separated integers, e.g., `7,0,1,2,0,3,0,4,...`).
+3. Set the number of memory frames.
+4. Click "Start Simulation".
+5. Use controls to step through or autoplay the simulation and adjust speed.
+6. Review statistics and the comparison chart to analyze performance.
+
+## Project Structure (key files)
+
+- `src/pages/Index.tsx`: Main page and simulation orchestration
+- `src/utils/pageReplacementAlgorithms.ts`: FIFO, LRU, Optimal, Clock implementations
+- `src/components/ControlPanel.tsx`: Inputs and simulation controls
+- `src/components/MemoryFrame.tsx`: Memory frame visualization
+- `src/components/StatisticsPanel.tsx`: Metrics display
+- `src/components/SimulationChart.tsx` and `src/components/ComparisonChart.tsx`: Charts
+- `src/types/pageReplacement.ts`: Types for steps and statistics
+
+## Deployment
+
+This is a static site built with Vite. Deploy the `dist` folder to any static host (e.g., GitHub Pages, Netlify, Vercel, or your own server).
+
+```sh
+npm run build
+# then deploy the generated dist/ directory
+```
